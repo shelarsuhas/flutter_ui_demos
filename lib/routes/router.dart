@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_demos/presentation/features/login/pages/login_page_2.dart';
 
 import '../data/common_models/list_item.dart';
 import '../presentation/features/login/pages/login_page_1.dart';
@@ -15,6 +16,12 @@ final List<dynamic> routes = [
       SubListItem(
         name: 'Login Page 1',
         page: LoginPage1(),
+        icon: Icons.person,
+        path: LoginPage1.path,
+      ),
+      SubListItem(
+        name: 'Login Page 2',
+        page: LoginPage2(),
         icon: Icons.person,
         path: LoginPage1.path,
       ),

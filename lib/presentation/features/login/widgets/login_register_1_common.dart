@@ -11,6 +11,8 @@ Widget getHeaderPrimaryClipPath() {
       height: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
+          begin: FractionalOffset.topLeft,
+          end: FractionalOffset.topRight,
           colors: [
             Color(0xfff9995e),
             Color(0xffb55a50),
@@ -40,9 +42,11 @@ Widget getFooterPrimaryClipPath() {
       height: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
+          begin: FractionalOffset.bottomLeft,
+          end: FractionalOffset.topRight,
           colors: [
             Color(0xff0be7f6),
-            Color(0xff4da1ed),
+            Color(0xff217fd1),
           ],
         ),
       ),
