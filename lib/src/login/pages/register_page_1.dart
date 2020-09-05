@@ -7,8 +7,7 @@ import 'login_page_1.dart';
 // GitHub: https://github.com/shelarsuhas
 
 class RegisterPage1 extends StatelessWidget {
-  static final String path =
-      "lib/presentation/login/pages/register_page_1.dart";
+  static final String path = "lib/src/login/pages/register_page_1.dart";
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

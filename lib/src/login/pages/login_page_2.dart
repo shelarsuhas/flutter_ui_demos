@@ -1,14 +1,15 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_demos/presentation/common_widgets/clip_shadow_path.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../common_widgets/clip_shadow_path.dart';
 
 // Author: Suhas Shelar
 // GitHub: https://github.com/shelarsuhas
 
 class LoginPage2 extends StatefulWidget {
-  static final String path = "lib/presentation/login/pages/login_page_2.dart";
+  static final String path = "lib/src/login/pages/login_page_2.dart";
   @override
   _LoginPage2State createState() => _LoginPage2State();
 }
@@ -31,7 +32,10 @@ class _LoginPage2State extends State<LoginPage2> {
         child: SingleChildScrollView(
           child: Container(
             color: Color(0xfff8f8f8),
-            height: size.height,
+            height: size.height -
+                MediaQuery.of(context)
+                    .padding
+                    .top, // removes the status bar height,
             width: double.infinity,
             child: Column(
               mainAxisSize: MainAxisSize.max,

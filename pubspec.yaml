@@ -30,6 +30,8 @@ dependencies:
 
   #Icons
   font_awesome_flutter: ^8.8.1
+  #Neumorphic Library
+  flutter_neumorphic: ^3.0.1
 
 dev_dependencies:
   flutter_test:

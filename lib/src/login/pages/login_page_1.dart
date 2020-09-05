@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_demos/presentation/features/login/pages/register_page_1.dart';
 
 import '../widgets/login_register_1_common.dart';
+import 'register_page_1.dart';
 
 // Author: Suhas Shelar
 // GitHub: https://github.com/shelarsuhas
 
 class LoginPage1 extends StatefulWidget {
-  static final String path = "lib/presentation/login/pages/login_page_1.dart";
+  static final String path = "lib/src/login/pages/login_page_1.dart";
   @override
   _LoginPage1State createState() => _LoginPage1State();
 }
