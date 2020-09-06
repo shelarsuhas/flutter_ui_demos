@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:flutter_ui_demos/src/detail_screen/widgets/arc_painter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../widgets/arc_painter.dart';
 
 // Author: Suhas Shelar
 // GitHub: https://github.com/shelarsuhas
@@ -20,6 +21,9 @@ class _DetailPage1State extends State<DetailPage1> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xffDBE6E8),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -105,7 +109,13 @@ class _DetailPage1State extends State<DetailPage1> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Current temerature'),
+                          Text(
+                            'Current temerature',
+                            style: TextStyle(
+                              color: textColorPrimary,
+                              fontSize: 16,
+                            ),
+                          ),
                           SizedBox(height: 10),
                           Text(
                             '18.5',
@@ -119,10 +129,22 @@ class _DetailPage1State extends State<DetailPage1> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Turn on/off'),
+                          Text(
+                            'Turn on/off',
+                            style: TextStyle(
+                              color: textColorPrimary,
+                              fontSize: 16,
+                            ),
+                          ),
                           SizedBox(height: 10),
                           NeumorphicSwitch(
-                            height: 30,
+                            style: NeumorphicSwitchStyle(
+                              trackDepth: 20,
+                              thumbDepth: 5,
+                              lightSource: LightSource.topLeft,
+                              activeTrackColor: Colors.grey.shade300,
+                            ),
+                            height: 32,
                             isEnabled: true,
                             value: isChecked,
                             onChanged: (value) {

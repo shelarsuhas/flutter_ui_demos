@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_1.dart';
 import 'package:flutter_ui_demos/src/home/pages/home_1.dart';
+import 'package:flutter_ui_demos/src/login/pages/login_page_3.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../data/common_models/list_item.dart';
@@ -27,6 +28,12 @@ final List<dynamic> routes = [
         page: LoginPage2(),
         icon: Icons.person,
         path: LoginPage1.path,
+      ),
+      SubListItem(
+        name: 'Login Page 3',
+        page: LoginPage3(),
+        icon: Icons.person,
+        path: LoginPage3.path,
       ),
       SubListItem(
         name: 'Register Page 1',

@@ -27,9 +27,9 @@ class _LoginPage2State extends State<LoginPage2> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Container(
             color: Color(0xfff8f8f8),
             height: size.height -
