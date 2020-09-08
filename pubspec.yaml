@@ -34,6 +34,8 @@ dependencies:
   flutter_neumorphic: ^3.0.1
   #Draw Polygon
   polygon_clipper: ^1.0.2
+  #Google Fonts library
+  google_fonts: ^1.1.0
 
 dev_dependencies:
   flutter_test:
