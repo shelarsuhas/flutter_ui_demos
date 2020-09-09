@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_2.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../data/common_models/list_item.dart';
@@ -62,7 +63,7 @@ final List<dynamic> routes = [
         path: HomePage1.path,
       ),
       SubListItem(
-        name: 'Home Page 2',
+        name: 'Home Page 2 (Dark/Light mode)',
         page: HomePage2(),
         icon: Icons.home,
         path: HomePage2.path,
@@ -78,6 +79,12 @@ final List<dynamic> routes = [
         page: DetailPage1(),
         icon: Icons.details,
         path: DetailPage1.path,
+      ),
+      SubListItem(
+        name: 'Detail Page 2 (Dark/Light mode)',
+        page: DetailPage2(),
+        icon: Icons.details,
+        path: DetailPage2.path,
       ),
     ],
   ),

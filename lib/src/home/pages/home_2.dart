@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_2.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage2 extends StatefulWidget {
@@ -14,6 +15,7 @@ class _HomePage2State extends State<HomePage2>
   Color primaryGrey = Color(0xff8C9BB5);
   Color primaryColor = Color(0xff34333f);
   Color backgroundColor = Color(0xff2E2C39);
+  Color lightBackground = Color(0xffF7F9FC);
   Color accentDark = Color(0xff7F9FF6);
   Color accentLight = Color(0xff2E4B9C);
 
@@ -46,7 +48,7 @@ class _HomePage2State extends State<HomePage2>
           height: size.height,
           child: Scaffold(
             appBar: AppBar(
-              backgroundColor: isDark ? primaryColor : Colors.white,
+              backgroundColor: isDark ? primaryColor : lightBackground,
               leading: Icon(
                 FontAwesomeIcons.cameraRetro,
                 color: primaryGrey,
@@ -83,7 +85,9 @@ class _HomePage2State extends State<HomePage2>
                     );
                   },
                   icon: Icon(
-                    isDark ? FontAwesomeIcons.moon : FontAwesomeIcons.sun,
+                    isDark
+                        ? FontAwesomeIcons.solidMoon
+                        : FontAwesomeIcons.solidSun,
                     color: primaryGrey,
                   ),
                 )
@@ -224,96 +228,114 @@ class _HomePage2State extends State<HomePage2>
   }) {
     return Padding(
       padding: const EdgeInsets.all(0.0),
-      child: Card(
-        color: isDark ? primaryColor : Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Container(
-          width: size.width / 2.2,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Icon(
-                    FontAwesomeIcons.solidHeart,
-                    color: isLiked
-                        ? isDark ? accentDark : accentLight
-                        : primaryGrey,
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Container(
-                    child: SvgPicture.asset(
-                      svgPath,
-                      fit: BoxFit.contain,
+      child: InkWell(
+        onTap: () async {
+          bool result = await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailPage2(
+                isDark: this.isDark,
+              ),
+            ),
+          );
+
+          setState(
+            () {
+              isDark = result;
+            },
+          );
+        },
+        child: Card(
+          color: isDark ? primaryColor : Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Container(
+            width: size.width / 2.2,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Icon(
+                      FontAwesomeIcons.solidHeart,
+                      color: isLiked
+                          ? isDark ? accentDark : accentLight
+                          : primaryGrey,
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: isDark ? Colors.white : Colors.black87,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                        text: '\$$price ',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                          color: isDark ? accentDark : accentLight,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: '\$${price + 10}',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              color: primaryGrey,
-                              decoration: TextDecoration.lineThrough,
-                            ),
-                          )
-                        ],
+                  Expanded(
+                    flex: 3,
+                    child: Container(
+                      child: SvgPicture.asset(
+                        svgPath,
+                        fit: BoxFit.contain,
                       ),
                     ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.star_half,
-                          color: Colors.yellow.shade600,
-                        ),
-                        Text(
-                          rating.toString(),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: isDark ? Colors.white : Colors.black87,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          text: '\$$price ',
                           style: TextStyle(
-                            color: primaryGrey,
-                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: isDark ? accentDark : accentLight,
                           ),
+                          children: [
+                            TextSpan(
+                              text: '\$${price + 10}',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                                color: primaryGrey,
+                                decoration: TextDecoration.lineThrough,
+                              ),
+                            )
+                          ],
                         ),
-                      ],
-                    )
-                  ],
-                )
-              ],
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star_half,
+                            color: Colors.yellow.shade600,
+                          ),
+                          Text(
+                            rating.toString(),
+                            style: TextStyle(
+                              color: primaryGrey,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
