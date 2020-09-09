@@ -1,3 +1,4 @@
 Inspiration: https://github.com/lohanidamodar/flutter_ui_challenges
 Login 1 / Register 1: https://medium.com/@adityadaniel/login-screen-ui-inspiration-1-6262a2b8cce0
 Login 2: https://medium.muz.li/login-sign-up-inspiration-for-mobile-apps-aeff34090bbd#.y5npwhp1h
+Reg 2: RegPage2: https://dribbble.com/shots/4762982-Psilogica-IOS-App-Sign-Up-Screen?utm_source=Pinterest_Shot&utm_campaign=vikky&utm_content=Psilogica+IOS+App+-+Sign+Up+Screen&utm_medium=Social_Share

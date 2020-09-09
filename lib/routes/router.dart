@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_1.dart';
-import 'package:flutter_ui_demos/src/home/pages/home_1.dart';
-import 'package:flutter_ui_demos/src/login/pages/login_page_3.dart';
-import 'package:flutter_ui_demos/src/login/pages/register_page_2.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../data/common_models/list_item.dart';
+import '../src/detail_screen/pages/detail_page_1.dart';
+import '../src/home/pages/home_1.dart';
+import '../src/home/pages/home_2.dart';
 import '../src/login/pages/login_page_1.dart';
 import '../src/login/pages/login_page_2.dart';
+import '../src/login/pages/login_page_3.dart';
 import '../src/login/pages/register_page_1.dart';
+import '../src/login/pages/register_page_2.dart';
 
 // Author: Suhas Shelar
 // GitHub: https://github.com/shelarsuhas
@@ -59,6 +60,12 @@ final List<dynamic> routes = [
         page: HomePage1(),
         icon: Icons.home,
         path: HomePage1.path,
+      ),
+      SubListItem(
+        name: 'Home Page 2',
+        page: HomePage2(),
+        icon: Icons.home,
+        path: HomePage2.path,
       ),
     ],
   ),
