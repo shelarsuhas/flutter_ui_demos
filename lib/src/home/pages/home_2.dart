@@ -68,9 +68,20 @@ class _HomePage2State extends State<HomePage2>
                   hintStyle: TextStyle(
                     color: primaryGrey,
                   ),
-                  border: OutlineInputBorder(
+                  enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
+                    ),
+                    borderSide: BorderSide(
+                      color: primaryGrey,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                    borderSide: BorderSide(
+                      color: primaryGrey,
                     ),
                   ),
                 ),

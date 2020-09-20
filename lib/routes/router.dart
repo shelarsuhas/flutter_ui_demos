@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_2.dart';
+import 'package:flutter_ui_demos/src/login/pages/forgot_password_page_1.dart';
+import 'package:flutter_ui_demos/src/login/pages/login_page_4.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../data/common_models/list_item.dart';
@@ -39,6 +41,12 @@ final List<dynamic> routes = [
         path: LoginPage3.path,
       ),
       SubListItem(
+        name: 'Login Page 4',
+        page: LoginPage4(),
+        icon: Icons.person,
+        path: LoginPage4.path,
+      ),
+      SubListItem(
         name: 'Register Page 1',
         page: RegisterPage1(),
         icon: Icons.person_add,
@@ -49,6 +57,12 @@ final List<dynamic> routes = [
         page: RegisterPage2(),
         icon: Icons.person_add,
         path: RegisterPage2.path,
+      ),
+      SubListItem(
+        name: 'Forgot Password Page 1',
+        page: ForgotPasswordPage1(),
+        icon: Icons.lock,
+        path: ForgotPasswordPage1.path,
       ),
     ],
   ),
