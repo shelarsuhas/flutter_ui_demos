@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="13px" viewBox="0 0 39 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>nike</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="nike1" transform="translate(-24.000000, -61.000000)">
+            <rect id="Rectangle" fill="#2F3035" x="0" y="0" width="375" height="860"></rect>
+            <g id="nike" transform="translate(24.500000, 61.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M18.7798984,4.85336985 L12.3042383,6.5485934 C10.0173301,7.11445056 8.01687242,7.86814414 6.08920132,7.20836877 C3.46888347,6.07665443 3.51584257,3.13231879 5.46934118,0.000146747191 C2.01549929,2.85056418 -4.19953774,11.9653257 4.20614136,12.8857241 C5.27680887,13.0266014 7.18334837,12.6509286 9.25424473,11.7798373 L18.7798984,7.87049209 L37.5682347,0.187983152 L21.1137657,4.24055358 L18.7798984,4.85336985 L18.7798984,4.85336985 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

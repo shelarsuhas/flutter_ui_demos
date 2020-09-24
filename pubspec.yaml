@@ -31,7 +31,7 @@ dependencies:
   #Icons
   font_awesome_flutter: ^8.8.1
   #Neumorphic Library
-  flutter_neumorphic: ^3.0.1
+  flutter_neumorphic: ^3.0.2
   #Draw Polygon
   polygon_clipper: ^1.0.2
   #Google Fonts library

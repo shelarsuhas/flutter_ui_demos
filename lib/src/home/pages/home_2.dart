@@ -60,7 +60,9 @@ class _HomePage2State extends State<HomePage2>
                 decoration: InputDecoration(
                   hintText: 'What are you looking for?',
                   contentPadding: const EdgeInsets.symmetric(
-                      vertical: 2.0, horizontal: 5.0),
+                    vertical: 2.0,
+                    horizontal: 5.0,
+                  ),
                   suffixIcon: Icon(
                     Icons.search,
                     color: primaryGrey,

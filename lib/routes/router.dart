@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_2.dart';
+import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_3.dart';
+import 'package:flutter_ui_demos/src/home/pages/home_3.dart';
 import 'package:flutter_ui_demos/src/login/pages/forgot_password_page_1.dart';
 import 'package:flutter_ui_demos/src/login/pages/login_page_4.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -82,6 +84,12 @@ final List<dynamic> routes = [
         icon: Icons.home,
         path: HomePage2.path,
       ),
+      SubListItem(
+        name: 'Home Page 3',
+        page: HomePage3(),
+        icon: Icons.home,
+        path: HomePage3.path,
+      ),
     ],
   ),
   ListItem(
@@ -99,6 +107,12 @@ final List<dynamic> routes = [
         page: DetailPage2(),
         icon: Icons.details,
         path: DetailPage2.path,
+      ),
+      SubListItem(
+        name: 'Detail Page 3',
+        page: DetailPage3(),
+        icon: Icons.details,
+        path: DetailPage3.path,
       ),
     ],
   ),
