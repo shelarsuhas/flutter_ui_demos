@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_4.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage3 extends StatefulWidget {
@@ -28,9 +29,10 @@ class _HomePage3State extends State<HomePage3> {
     Size size = MediaQuery.of(context).size;
     return NeumorphicTheme(
       theme: NeumorphicThemeData(
-        baseColor: Color(0xffDDDDDD),
+        baseColor: Color(0xffEAEAEA),
         accentColor: Colors.cyan,
         lightSource: LightSource.topLeft,
+        shadowLightColor: Colors.white,
         depth: 8,
         intensity: 0.8,
       ),
@@ -74,7 +76,7 @@ class _HomePage3State extends State<HomePage3> {
                         SizedBox(
                           height: 20,
                         ),
-                        _buildRecentlyPlayed(),
+                        _buildRecentlyPlayed(context),
                         SizedBox(
                           height: 20,
                         ),
@@ -92,7 +94,7 @@ class _HomePage3State extends State<HomePage3> {
                         SizedBox(
                           height: 10,
                         ),
-                        _buildTopPodcast()
+                        _buildTopPodcast(context)
                       ],
                     ),
                   ),
@@ -106,7 +108,7 @@ class _HomePage3State extends State<HomePage3> {
     );
   }
 
-  Expanded _buildTopPodcast() {
+  Expanded _buildTopPodcast(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -118,63 +120,67 @@ class _HomePage3State extends State<HomePage3> {
               (index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 40,
-                        child: Neumorphic(
-                          style: NeumorphicStyle(
-                            boxShape: NeumorphicBoxShape.circle(),
-                            color: backgroundColor,
-                            depth: 3,
-                            intensity: 0.9,
-                            shape: NeumorphicShape.convex,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Image.asset('assets/images/band4.png'),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Do you see what I see?',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
+                  child: InkWell(
+                    onTap: () {
+                      _navigateToDetail(context);
+                    },
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          child: Neumorphic(
+                            style: NeumorphicStyle(
+                              boxShape: NeumorphicBoxShape.circle(),
+                              color: backgroundColor,
+                              depth: 3,
+                              intensity: 0.9,
                             ),
-                            Text(
-                              'Cerita Horror True Story',
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w300,
-                                color: Colors.black54,
-                              ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Image.asset('assets/images/band4.png'),
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                      Text(
-                        '47 Eps',
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black87,
+                        SizedBox(
+                          width: 20,
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Icon(Icons.more_vert),
-                    ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Do you see what I see?',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Cerita Horror True Story',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w300,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          '47 Eps',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black87,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Icon(Icons.more_vert),
+                      ],
+                    ),
                   ),
                 );
               },
@@ -255,7 +261,7 @@ class _HomePage3State extends State<HomePage3> {
       height: 40,
       child: Neumorphic(
         style: NeumorphicStyle(
-            color: backgroundColor,
+            color: Color(0xffDDDDDD),
             depth: -3,
             intensity: 0.9,
             shape: NeumorphicShape.convex),
@@ -294,26 +300,26 @@ class _HomePage3State extends State<HomePage3> {
 
   Row _buildToolbar(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 40,
-          width: 40,
+          height: 55,
+          width: 55,
           child: NeumorphicButton(
             onPressed: () {
               Navigator.pop(context);
             },
             style: NeumorphicStyle(
-              shape: NeumorphicShape.convex,
               color: backgroundColor,
-              depth: 4,
-              intensity: 0.9,
+              depth: 3,
+              intensity: 1,
             ),
-            child: NeumorphicIcon(
-              Icons.arrow_back,
-              style: NeumorphicStyle(
-                color: iconColor,
-                shape: NeumorphicShape.concave,
+            child: Center(
+              child: NeumorphicIcon(
+                Icons.arrow_back,
+                style: NeumorphicStyle(
+                  color: iconColor,
+                  shape: NeumorphicShape.concave,
+                ),
               ),
             ),
           ),
@@ -332,7 +338,7 @@ class _HomePage3State extends State<HomePage3> {
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 0,
             ),
             Text(
               'Caesar Candil!',
@@ -344,11 +350,25 @@ class _HomePage3State extends State<HomePage3> {
           ],
         ),
         Spacer(),
-        NeumorphicIcon(
-          FontAwesomeIcons.user,
-          size: 25,
-          style: NeumorphicStyle(
-            color: iconColor,
+        Container(
+          height: 55,
+          width: 55,
+          child: NeumorphicButton(
+            onPressed: () {},
+            style: NeumorphicStyle(
+              color: backgroundColor,
+              depth: 3,
+              intensity: 1,
+            ),
+            child: Center(
+              child: NeumorphicIcon(
+                FontAwesomeIcons.user,
+                style: NeumorphicStyle(
+                  color: iconColor,
+                  shape: NeumorphicShape.concave,
+                ),
+              ),
+            ),
           ),
         ),
       ],
@@ -440,48 +460,52 @@ class _HomePage3State extends State<HomePage3> {
     );
   }
 
-  SingleChildScrollView _buildRecentlyPlayed() {
+  SingleChildScrollView _buildRecentlyPlayed(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Container(
-              width: 130,
-              child: Neumorphic(
-                style: NeumorphicStyle(
-                  color: backgroundColor,
-                  depth: 3,
-                  intensity: 0.9,
-                  shape: NeumorphicShape.convex,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Image.asset(
-                          'assets/images/band1.png',
+            child: InkWell(
+              onTap: () {
+                _navigateToDetail(context);
+              },
+              child: Container(
+                width: 130,
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    color: backgroundColor,
+                    depth: 3,
+                    intensity: 0.9,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Image.asset(
+                            'assets/images/band1.png',
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Kang Desain',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                        Text(
+                          'Kang Desain',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Bang Be, Candil Dan, Mas Upi',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
+                        Text(
+                          'Bang Be, Candil Dan, Mas Upi',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -489,41 +513,45 @@ class _HomePage3State extends State<HomePage3> {
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Container(
-              width: 130,
-              child: Neumorphic(
-                style: NeumorphicStyle(
-                  color: backgroundColor,
-                  depth: 3,
-                  intensity: 0.9,
-                  shape: NeumorphicShape.convex,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Image.asset(
-                          'assets/images/band2.png',
+            child: InkWell(
+              onTap: () {
+                _navigateToDetail(context);
+              },
+              child: Container(
+                width: 130,
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    color: backgroundColor,
+                    depth: 3,
+                    intensity: 0.9,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Image.asset(
+                            'assets/images/band2.png',
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Kang Desain',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                        Text(
+                          'Kang Desain',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Bang Be, Candil Dan, Mas Upi',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
+                        Text(
+                          'Bang Be, Candil Dan, Mas Upi',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -531,41 +559,45 @@ class _HomePage3State extends State<HomePage3> {
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Container(
-              width: 130,
-              child: Neumorphic(
-                style: NeumorphicStyle(
-                  color: backgroundColor,
-                  depth: 3,
-                  intensity: 0.9,
-                  shape: NeumorphicShape.convex,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Image.asset(
-                          'assets/images/band3.png',
+            child: InkWell(
+              onTap: () {
+                _navigateToDetail(context);
+              },
+              child: Container(
+                width: 130,
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    color: backgroundColor,
+                    depth: 3,
+                    intensity: 0.9,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Image.asset(
+                            'assets/images/band3.png',
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Kang Desain',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                        Text(
+                          'Kang Desain',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Bang Be, Candil Dan, Mas Upi',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
+                        Text(
+                          'Bang Be, Candil Dan, Mas Upi',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -573,41 +605,45 @@ class _HomePage3State extends State<HomePage3> {
           ),
           Padding(
             padding: const EdgeInsets.all(5.0),
-            child: Container(
-              width: 130,
-              child: Neumorphic(
-                style: NeumorphicStyle(
-                  color: backgroundColor,
-                  depth: 3,
-                  intensity: 0.9,
-                  shape: NeumorphicShape.convex,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Image.asset(
-                          'assets/images/band4.png',
+            child: InkWell(
+              onTap: () {
+                _navigateToDetail(context);
+              },
+              child: Container(
+                width: 130,
+                child: Neumorphic(
+                  style: NeumorphicStyle(
+                    color: backgroundColor,
+                    depth: 3,
+                    intensity: 0.9,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Image.asset(
+                            'assets/images/band4.png',
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Kang Desain',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                        Text(
+                          'Kang Desain',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Bang Be, Candil Dan, Mas Upi',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
+                        Text(
+                          'Bang Be, Candil Dan, Mas Upi',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -620,7 +656,7 @@ class _HomePage3State extends State<HomePage3> {
 
   NeumorphicRadioStyle _buildNeumorphicRadioStyle() {
     return NeumorphicRadioStyle(
-      selectedColor: backgroundColor,
+      selectedColor: Color(0xffDDDDDD),
       unselectedColor: backgroundColor,
       unselectedDepth: 3,
       selectedDepth: -5,
@@ -631,12 +667,17 @@ class _HomePage3State extends State<HomePage3> {
 
   NeumorphicRadioStyle _buildTopButtonStyle() {
     return NeumorphicRadioStyle(
-      selectedColor: backgroundColor,
+      selectedColor: Color(0xffDDDDDD),
       unselectedColor: backgroundColor,
       unselectedDepth: 3,
       selectedDepth: -3,
       intensity: 0.8,
       shape: NeumorphicShape.concave,
     );
+  }
+
+  _navigateToDetail(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => DetailPage4()));
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_2.dart';
 import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_3.dart';
+import 'package:flutter_ui_demos/src/detail_screen/pages/detail_page_4.dart';
 import 'package:flutter_ui_demos/src/home/pages/home_3.dart';
 import 'package:flutter_ui_demos/src/login/pages/forgot_password_page_1.dart';
 import 'package:flutter_ui_demos/src/login/pages/login_page_4.dart';
@@ -113,6 +114,12 @@ final List<dynamic> routes = [
         page: DetailPage3(),
         icon: Icons.details,
         path: DetailPage3.path,
+      ),
+      SubListItem(
+        name: 'Detail Page 4',
+        page: DetailPage4(),
+        icon: Icons.details,
+        path: DetailPage4.path,
       ),
     ],
   ),
