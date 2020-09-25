@@ -157,7 +157,7 @@ class DetailPage4 extends StatelessWidget {
     return Container(
       width: size.width / 1.5,
       child: Text(
-        'Ep.2 - Flutter Widgets - Flutter UI/UX. Working with Flutter to build beautiful UI.',
+        'Ep.2 - Flutter Widgets - Flutter UI/UX. Working with Flutter to build beautiful UI. Flutter is Awesome.',
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 18,
